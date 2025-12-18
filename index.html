@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Info Bokser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard</h1>
+            <p class="timestamp" id="timestamp"></p>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="box weather-box large-box">
+                <h2>Vær</h2>
+                <iframe 
+                    src="https://www.yr.no/nb/innhold/1-73779/card.html?mode=dark" 
+                    width="100%" 
+                    height="300" 
+                    frameborder="0"
+                    style="border-radius: 10px; margin-top: 10px;">
+                </iframe>
+            </div>
+
+            <div class="box transit-box large-box">
+                <h2>Neste Bus</h2>
+                <iframe 
+                    src="https://mon.ruter.no/departures/59.92559-10.811818/N4Igrgzgpgwg9gGzAWwHYBkCGBPOYAuIAXAGaYLQA0IARnJgE4AmExA2qE1AjlEwMr5G+ACoBLZFGIAGagAsxTLhjGoorIqABy-AEpFBcAA4AFHgGMoRAKwBOAEzT2IHfoCKYHEQCM0gBzW1gC0AGIAQgDMQQDyEAhwAARIJPhymABuqCDUrkQeXr4BwfZ+QQAbANZQDFk5enme2D7+1gBsQSWhcDVQNGDZLvX5TYVtQd721gCiQVrqAKfQtYPujc0B7RPTQQCCcpADucPrgeOTM5XVy0dro+32UfwSUKgQNAzz+C+HQ7ct9wAWIJhBjYV4vADmIAAugBfaioFA0arREgAESgRmEYAY6mIAHZqPgxPgEFIiCAAKoIdIvBL4bpQ6hMMQQTA0MlMEQMTCvIzdfAAWTgXA0bGh1Be7M5xHwDDAUHkiig3Mw5gq8CQaGIZAoipAEAZpgsUAAkixnLlDMa1VY7I4YfDONxeAIhAxRM8ZEqlC90Ko8Zp4SBEchkQxURisR6cYHCSBiaTySATNUILSxN9mazpXxVXyBcLRewJSApRy+DryFQQAouKr1ZqUFlSNX9YbjGZbeaxSsDEau5YbLY-PZHaXaQwIGI4C37D6oDtUBJMMTZxpdTW61AnvhPGvXlW9bCgA" 
+                    width="100%" 
+                    height="300" 
+                    frameborder="0"
+                    style="border-radius: 10px; margin-top: 10px;">
+                </iframe>
+            </div>
+
+            <div class="box todos">
+                <h2>To-Do Liste</h2>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="input" 
+                        placeholder="Legg til ny oppgave..." 
+                        class="input"
+                    >
+                    <button id="addBtn" class="btn">Legg til</button>
+                </div>
+                <ul id="list" class="list"></ul>
+                <p id="loading" style="display:none; text-align:center;">Laster...</p>
+                <p id="error" style="display:none; color:red; text-align:center;"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
